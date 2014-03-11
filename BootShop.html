@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!-- Powered by http://getbootstrap.com/examples/cover/ and http://simplecartjs.org/-->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/icon" href="favicon.ico">
+    <script src="./js/simpleCart.min.js"></script>
+
+    <title>BootShopJS</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for cover template -->
+    <link href="./css/cover.css" rel="stylesheet">
+    
+    <!-- Customisations for BootShop -->
+    <link href="./css/bootshop.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <style id="holderjs-style" type="text/css"></style></head>
+
+  <body>
+	
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div id="masthead" class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">BootShop</h3>
+              <ul class="nav masthead-nav">
+                <li class="active"><a href="#" onclick="injectSection(0)">Home</a></li>
+                <li><a href="#" onClick="injectSection(1)">Products</a></li>
+                <li><a href="#" onClick="injectSection(2)">Contact</a></li>
+                <li><a href="#" data-toggle="modal" onclick="cartOpen()" data-target="#cart">Cart (<span class="simpleCart_quantity"></span>)</a></li>
+              </ul>
+            </div>
+          </div><!-- masthead -->
+          
+          <!------- Home info -------->
+          <div id="home" class="inner cover">
+            <h1 class="cover-heading">Ecommerce much?</h1>
+            <p class="lead">The feather-weight ecommerce solution.  Add your products and merchant details for an instant lightweight ecommerce solution.</p>
+            <p class="lead">
+              <a href="http://getbootstrap.com/examples/cover/#" class="btn btn-lg btn-default">Get started</a>
+            </p>
+          </div>
+           
+          <!------- Contact info ------->
+          <div id="contact" class="inner cover hidden">
+          	<h1 class="cover-heading">Contact Us</h1>
+          	<p class="lead"><a href="mailto:wc8585@gmail.com">Email us</a></p>
+          	<p class="lead"><a href="http://www.twitter.com/bootstrapjs">Tweet us</a></p>
+          	<p class="lead"><a href="http://www.facebook.com">Facebook us</a></p> 
+          </div>
+           
+           <!--------- products ------->
+            <div id="products" class="row inner hidden cover">
+				<div class="col-md-3">
+				  	<div class="simpleCart_shelfItem">
+				  		<img src="images/rumours.jpg" class="item_image">
+			    		<h4 class="item_name">Fleetwood Mac - Rumours</h4>
+			    		<input type="text" value="1" class="item_Quantity">
+			    		<span class="item_price clearfix">£15.99</span>
+						<a class="item_add btn btn-xs btn-default" href="javascript:;">Add to Cart</a>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="simpleCart_shelfItem">
+						<img src="images/tango_in_the_night.jpg" class="item_image">
+			    		<h4 class="item_name">Fleetwood Mac - Tango in the night</h4>
+			    		<input type="text" value="1" class="item_Quantity">
+			    		<span class="item_price clearfix">£9.99</span>
+						<a class="item_add btn btn-xs btn-default" href="javascript:;">Add to Cart</a>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="simpleCart_shelfItem">
+						<img src="images/penguin.jpg" class="item_image">
+			    		<h4 class="item_name">Fleetwood Mac - Penguin</h4>
+			    		<input type="text" value="1" class="item_Quantity">
+			    		<span class="item_price clearfix">£10.99</span>
+						<a class="item_add btn btn-xs btn-default" href="javascript:;">Add to Cart</a>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="simpleCart_shelfItem">
+						<img src="images/mystery_to_me.jpg" class="item_image">
+			    		<h4 class="item_name">Fleetwood Mac - Mystery to me</h4>
+			    		<input type="text" value="1" class="item_Quantity">
+			    		<span class="item_price clearfix">£10.99</span>
+						<a class="item_add btn btn-xs btn-default" href="javascript:;">Add to Cart</a>
+					</div>
+				</div>
+		  	</div><!--row one - products-->
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>Powered by <a href="http://getbootstrap.com/">Bootstrap</a> and <a href="http://simplecartjs.org/">SimpleCart</a>. Find me: <a href="https://twitter.com/willchis">@willchis</a>.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      
+      <!-- Cart Modal -->
+	<div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title" id="myModalLabel">Your Cart</h4>
+	      </div>
+	      <div class="modal-body">
+	      	<div id="cart" class="simpleCart_items"></div>
+	      </div>
+	      <div class="modal-footer">
+	      	<div class="pull-left"> Total: <span class="simpleCart_total"></span></div>
+	        <a class="simpleCart_empty btn btn-warning" href="javascript:;">Empty Cart</a>
+	        <a class="simpleCart_checkout btn btn-success" href="javascript:;">Checkout</a>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/docs.min.js"></script>
+    <script src="./js/simpleCart.min.js"></script>
+  
+	<script>
+	// Initialise SimpleCart
+		simpleCart({
+			checkout: { 
+				type: "PayPal" , 
+				email: "test@email.com" 
+			},
+			currency: "GBP",
+			tax: 0.175,
+			shippingQuantityRate: 1.50
+		});
+		
+		function hasClass(el, selector) {
+			var className = " " + selector + " ";
+			if ((" " + el.className + " ").replace(/[\n\t]/g, "").indexOf(className) > -1) {
+				return true;
+			}	
+			return false;
+		}
+		
+		function removeClassIfPresent(el, className) {
+			if (hasClass(el, className)) {
+				el.classList.remove(className);
+			}
+		}
+		
+		function showOrHideWithBootstrap(el, isShow) {
+			if (isShow) {
+				removeClassIfPresent(el, 'hidden');
+				el.classList.add('show');
+			} else {
+				removeClassIfPresent(el, 'show');
+				el.classList.add('hidden');
+			}
+			
+		}
+		
+		function cartOpen() {
+			var removeButton = document.getElementsByClassName('item-remove')[1];
+			removeButton.classList.add("btn");
+			removeButton.classList.add("btn-danger");
+			removeButton.classList.add("btn-xs");
+		}
+		
+		function getAllSections() {
+			var products = document.getElementById('products'),
+				home = document.getElementById('home'),
+				contact = document.getElementById('contact'),
+				sections = [home, products, contact];
+			return sections;
+		}
+		
+	// Hacky DOM manipulation to allow everything on single page - could change this to use Angular/Moustache/plain-AJAx, or just scroll-to...
+		function injectSection(sectionToShowId) {
+			var sections = getAllSections(),
+				i;
+			
+			for (i = 0; i < sections.length; i++) {
+				showOrHideWithBootstrap(sections[i], false);
+			}
+			showOrHideWithBootstrap(sections[sectionToShowId], true);
+		}
+	</script>
+</body></html>
